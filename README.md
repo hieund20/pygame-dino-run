@@ -16,6 +16,7 @@ See more at https://www.pygame.org/wiki/about
 <br/>
 <b>Coordinates in making game</b>
 Different from normal axis. Coordinates in making game is performed in reverse
+
 ![coordinate_image](https://github.com/hieund20/pygame-dino-run/assets/71435458/c1944135-c188-4143-bea0-738f8d0c5d4c?raw=true)
 
 

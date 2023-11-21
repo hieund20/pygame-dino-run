@@ -20,10 +20,20 @@ Different from normal coordinates in Two Dimensional Coordinate Geometry. Coordi
 
 ![coordinate_image](https://github.com/hieund20/pygame-dino-run/assets/71435458/c1944135-c188-4143-bea0-738f8d0c5d4c?raw=true)
 
-
-
 <br/>
 <b>Project initialization</b>
 
+Create venv
+
+```
+python -m venv venv
+```
+
+Python venv activation
+
+```
+# In cmd.exe
+venv\Scripts\activate.bat
+```
 
 

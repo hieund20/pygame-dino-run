@@ -15,7 +15,9 @@ See more at https://www.pygame.org/wiki/about
 
 <br/>
 <b>Axis in making game</b>
-Different from normal axis. Coordinate axis in making game is performed   
+Different from normal axis. Coordinates in making game is performed in reverse
+
+
 
 <br/>
 <b>Project initialization</b>

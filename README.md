@@ -14,7 +14,7 @@ This allows you to create fully featured games and multimedia programs in the py
 See more at https://www.pygame.org/wiki/about
 
 <br/>
-<b>Axis in making game</b>
+<b>Coordinates in making game</b>
 Different from normal axis. Coordinates in making game is performed in reverse
 
 

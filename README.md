@@ -36,4 +36,10 @@ Python venv activation
 venv\Scripts\activate.bat
 ```
 
+Install pygame
+
+```
+pip install pygame
+```
+
 

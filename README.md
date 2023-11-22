@@ -92,10 +92,10 @@ def game():
     check_point = pygame.mixer.Sound("resource/sounds/checkpoint.wav") # Set the sound when the dino jump.
     death_sound = pygame.mixer.Sound("resource/sounds/die.wav") # Set the sound when the dino have a collision with the cactus or ptera
 
-    dino_icon = pygame.image.load("resource/images/dino_.png")
-    pygame.display.set_icon(dino_icon)
+    dino_icon = pygame.image.load("resource/images/dino_.png") 
+    pygame.display.set_icon(dino_icon) # Change the system image for the display window
 
-    pygame.display.set_caption("Dino run")
+    pygame.display.set_caption("Dino run") # Set the current window caption
 
     game_over = pygame.image.load("resource/images/game_over.png")
     replay_button = pygame.image.load("resource/images/replay_button.png")

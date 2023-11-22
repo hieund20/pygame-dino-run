@@ -42,4 +42,11 @@ Install pygame
 pip install pygame
 ```
 
+<br/>
+<b>File structure</b>
+
+
+![image](https://github.com/hieund20/pygame-dino-run/assets/71435458/bbf7db22-ad0a-4076-839a-04ce52611ce3)
+
+
 

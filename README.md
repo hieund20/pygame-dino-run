@@ -84,13 +84,13 @@ Define the game function
 
 ```
 def game():
-    screen = pygame.display.set_mode((700, 250)) # Set the width and height of the screen
+    screen = pygame.display.set_mode((700, 250)) # Set the width and height of the screen.
     clock = pygame.time.Clock()
 
-    font = pygame.font.Font("freesansbold.ttf", 20) # Set the font of the game
+    font = pygame.font.Font("freesansbold.ttf", 20) # Set the font of the game.
 
-    check_point = pygame.mixer.Sound("resource/sounds/checkpoint.wav") 
-    death_sound = pygame.mixer.Sound("resource/sounds/die.wav")
+    check_point = pygame.mixer.Sound("resource/sounds/checkpoint.wav") # Set the sound when the dino jump.
+    death_sound = pygame.mixer.Sound("resource/sounds/die.wav") # Set the sound when the dino have a collision with the cactus or ptera
 
     dino_icon = pygame.image.load("resource/images/dino_.png")
     pygame.display.set_icon(dino_icon)

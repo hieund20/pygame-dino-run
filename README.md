@@ -62,6 +62,18 @@ venv folder is generated from command <code>python -m venv venv</code>
 
 dino.py is the main file of project, I will write code then run project from this file.
 
+<br/>
+<b>Let's get started</b>
+
+Import the neccessary libaries
+
+```
+import random
+import pygame
+from pygame.locals import *
+import time
+```
+
 
 
 

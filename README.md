@@ -21,6 +21,11 @@ Different from normal coordinates in Two Dimensional Coordinate Geometry. Coordi
 ![coordinate_image](https://github.com/hieund20/pygame-dino-run/assets/71435458/c1944135-c188-4143-bea0-738f8d0c5d4c?raw=true)
 
 <br/>
+<b>The IDE I used</b>
+
+I used Visual Studio Code to make this project.
+
+<br/>
 <b>Project initialization</b>
 
 Create venv
@@ -57,10 +62,9 @@ venv folder is generated from command <code>python -m venv venv</code>
 
 dino.py is the main file of project, I will write code then run project from this file.
 
-<br/>
-<b>The IDE I used</b>
 
-I used Visual Studio Code to make this project.
+
+
 
 
 

@@ -80,6 +80,30 @@ Initialize all imported pygame modules. Add it to your code at the top level:
 pygame.init()
 ```
 
+Define the game function
+
+```
+def game():
+    screen = pygame.display.set_mode((700, 250)) # Set the width and height of the screen
+    clock = pygame.time.Clock()
+
+    font = pygame.font.Font("freesansbold.ttf", 20) # Set the font of the game
+
+    check_point = pygame.mixer.Sound("resource/sounds/checkpoint.wav") 
+    death_sound = pygame.mixer.Sound("resource/sounds/die.wav")
+
+    dino_icon = pygame.image.load("resource/images/dino_.png")
+    pygame.display.set_icon(dino_icon)
+
+    pygame.display.set_caption("Dino run")
+
+    game_over = pygame.image.load("resource/images/game_over.png")
+    replay_button = pygame.image.load("resource/images/replay_button.png")
+    logo = pygame.image.load("resource/images/logo.png")
+
+    GREY = (240, 240, 240)
+```
+
 
 
 

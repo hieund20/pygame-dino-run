@@ -74,6 +74,13 @@ from pygame.locals import *
 import time
 ```
 
+Initialize all imported pygame modules. Add it to your code at the top level:
+
+```
+pygame.init()
+```
+
+
 
 
 

@@ -90,19 +90,21 @@ def game():
     font = pygame.font.Font("freesansbold.ttf", 20) # Set the font of the game.
 
     check_point = pygame.mixer.Sound("resource/sounds/checkpoint.wav") # Set the sound when the dino jump.
-    death_sound = pygame.mixer.Sound("resource/sounds/die.wav") # Set the sound when the dino have a collision with the cactus or ptera
+    death_sound = pygame.mixer.Sound("resource/sounds/die.wav") # Set the sound when the dino have a collision with the cactus or ptera.
 
     dino_icon = pygame.image.load("resource/images/dino_.png") 
-    pygame.display.set_icon(dino_icon) # Change the system image for the display window
+    pygame.display.set_icon(dino_icon) # Change the system image for the display window.
 
-    pygame.display.set_caption("Dino run") # Set the current window caption
+    pygame.display.set_caption("Dino run") # Set the current window caption.
 
-    game_over = pygame.image.load("resource/images/game_over.png") # Set the title when player lose
-    replay_button = pygame.image.load("resource/images/replay_button.png") # Set the button 
-    logo = pygame.image.load("resource/images/logo.png")
+    game_over = pygame.image.load("resource/images/game_over.png") # Set the title when player lose.
+    replay_button = pygame.image.load("resource/images/replay_button.png") # Set the button that allow replay the game when player lose.
+    logo = pygame.image.load("resource/images/logo.png") # Set the logo that will show when player lose.
 
-    GREY = (240, 240, 240)
+    GREY = (240, 240, 240) # Set the background color
 ```
+
+
 
 
 

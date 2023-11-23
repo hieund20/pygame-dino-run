@@ -106,6 +106,76 @@ def game():
     # To be continued
 ```
 
+Define the dino object
+```
+class Dino():
+    def __init__(self):
+        self.Img = pygame.image.load("resource/images/dino_.png")
+        self.WIDTH, self.HEIGHT = 44, 48
+        self.Img = pygame.transform.scale(self.Img, (self.WIDTH, self.HEIGHT))
+        self.image = self.Img
+        self.x = 20
+        self.y = 170
+        self.g = -0.25 # Gravity
+        self.up = 7 # Initial upward velocity
+        self.t = 0 # time
+
+        self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-15, self.HEIGHT-5)
+
+        self.runImg1 = pygame.image.load("resource/images/dino_1.png")
+        self.runImg2 = pygame.image.load("resource/images/dino_2.png")
+        self.runImg1 = pygame.transform.scale(self.runImg1, (self.WIDTH, self.HEIGHT))
+        self.runImg2 = pygame.transform.scale(self.runImg2, (self.WIDTH, self.HEIGHT))
+
+        # When user press key down
+        self.duck1 = pygame.image.load("resource/images/dino_ducking1.png")
+        self.duck2 = pygame.image.load("resource/images/dino_ducking2.png")
+        self.duck1 = pygame.transform.scale(self.duck1, (self.WIDTH+15, self.HEIGHT))
+        self.duck2 = pygame.transform.scale(self.duck2, (self.WIDTH+15, self.HEIGHT))
+
+        self.is_ducking = False
+
+        self.duckImgs = [self.duck1, self.duck2]
+        self.runImgs = [self.runImg1, self.runImg2]
+
+        self.jump_sound = pygame.mixer.Sound("resource/sounds/jump.wav")
+        self.count = 0
+        self.jumping = False
+
+    def jump(self):
+        self.y-=self.up # Start jumping
+        self.jumping=True
+        self.jump_sound.play()
+
+    def update(self):
+        if self.y < 170: # check if jumping
+            self.up = self.up + self.g * self.t # Dinh ly 1 Newton: v = u + at
+            self.y -= self.up
+            self.t += 0.12 # incrementing time
+
+        if self.y > 170:  # check if jumping is complete and resetting all
+            self.y = 170
+            self.t = 0
+            self.up = 7
+            self.jumping = False
+
+        if self.is_ducking:
+            self.hitbox = pygame.Rect(self.x + 5, self.y + 20, self.WIDTH +12, self.HEIGHT -20)
+            self.image = self.duckImgs[int(self.count)%2]
+            self.count+=0.2
+        elif self.jumping:
+            self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH - 15, self.HEIGHT-5)
+            self.image=self.Img
+        else:
+            self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-17, self.HEIGHT-5)
+            self.image = self.runImgs[int(self.count)%2]
+            self.count += 0.15
+
+    def draw(self, screen):
+        screen.blit(self.image, (self.x, self.y))
+        pygame.draw.rect(screen, (0, 0, 0), self.hitbox, 2)
+```
+
 
 
 

@@ -97,8 +97,8 @@ def game():
 
     pygame.display.set_caption("Dino run") # Set the current window caption
 
-    game_over = pygame.image.load("resource/images/game_over.png")
-    replay_button = pygame.image.load("resource/images/replay_button.png")
+    game_over = pygame.image.load("resource/images/game_over.png") # Set the title when player lose
+    replay_button = pygame.image.load("resource/images/replay_button.png") # Set the button 
     logo = pygame.image.load("resource/images/logo.png")
 
     GREY = (240, 240, 240)

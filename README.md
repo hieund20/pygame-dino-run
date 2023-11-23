@@ -110,7 +110,7 @@ Define the dino object
 ```
 class Dino():
     def __init__(self):
-        self.Img = pygame.image.load("resource/images/dino_.png")
+        self.Img = pygame.image.load("resource/images/dino_.png") # Load the image of the dino
         self.WIDTH, self.HEIGHT = 44, 48
         self.Img = pygame.transform.scale(self.Img, (self.WIDTH, self.HEIGHT))
         self.image = self.Img

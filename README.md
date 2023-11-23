@@ -102,7 +102,11 @@ def game():
     logo = pygame.image.load("resource/images/logo.png") # Set the logo that will show when player lose.
 
     GREY = (240, 240, 240) # Set the background color
+
+    # To be continued
 ```
+
+
 
 
 

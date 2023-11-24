@@ -122,8 +122,10 @@ class Dino():
 
         self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-15, self.HEIGHT-5)
 
-        self.runImg1 = pygame.image.load("resource/images/dino_1.png")
-        self.runImg2 = pygame.image.load("resource/images/dino_2.png")
+        self.runImg1 = pygame.image.load("resource/images/dino_1.png") # Set the image of the dino when dino run
+        self.runImg2 = pygame.image.load("resource/images/dino_2.png") # Set the image of the dino when dino run
+        # runImg1, runImg2 will make animation of the dino when the dino run
+        
         self.runImg1 = pygame.transform.scale(self.runImg1, (self.WIDTH, self.HEIGHT))
         self.runImg2 = pygame.transform.scale(self.runImg2, (self.WIDTH, self.HEIGHT))
 

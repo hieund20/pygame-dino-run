@@ -110,14 +110,14 @@ Define the dino object
 ```
 class Dino():
     def __init__(self):
-        self.Img = pygame.image.load("resource/images/dino_.png") # Load the image of the dino
-        self.WIDTH, self.HEIGHT = 44, 48
-        self.Img = pygame.transform.scale(self.Img, (self.WIDTH, self.HEIGHT))
-        self.image = self.Img
-        self.x = 20
-        self.y = 170
-        self.g = -0.25 # Gravity
-        self.up = 7 # Initial upward velocity
+        self.Img = pygame.image.load("resource/images/dino_.png") # Set image of the dino
+        self.WIDTH, self.HEIGHT = 44, 48 # Set width and the heigth of dino
+        self.Img = pygame.transform.scale(self.Img, (self.WIDTH, self.HEIGHT)) # Set image of the dino
+        self.image = self.Img 
+        self.x = 20 # Initial x position of the dino 
+        self.y = 170 # Initial y position of the dino 
+        self.g = -0.25 # Initial gravity of the dino
+        self.up = 7 # Initial upward velocity of the dino
         self.t = 0 # time
 
         self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-15, self.HEIGHT-5)

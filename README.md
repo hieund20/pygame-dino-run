@@ -141,8 +141,8 @@ class Dino():
         self.duckImgs = [self.duck1, self.duck2]
         self.runImgs = [self.runImg1, self.runImg2]
 
-        self.jump_sound = pygame.mixer.Sound("resource/sounds/jump.wav")
-        self.count = 0
+        self.jump_sound = pygame.mixer.Sound("resource/sounds/jump.wav") # Set the sound when the dino jump
+        self.count = 0 # Initial player score 
         self.jumping = False
 
     def jump(self):

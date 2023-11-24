@@ -152,7 +152,7 @@ class Dino():
 
     def update(self):
         if self.y < 170: # check if jumping
-            self.up = self.up + self.g * self.t # Dinh ly 1 Newton: v = u + at
+            self.up = self.up + self.g * self.t # Newton's First Law of Motion: v = u + at
             self.y -= self.up
             self.t += 0.12 # incrementing time
 

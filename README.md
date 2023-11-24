@@ -129,11 +129,12 @@ class Dino():
         self.runImg1 = pygame.transform.scale(self.runImg1, (self.WIDTH, self.HEIGHT)) # Resize to new resolution of runImg1 follow WIDTH and HEIGHT
         self.runImg2 = pygame.transform.scale(self.runImg2, (self.WIDTH, self.HEIGHT)) # Resize to new resolution of runImg2 follow WIDTH and HEIGHT
 
-        # When user press key down
-        self.duck1 = pygame.image.load("resource/images/dino_ducking1.png")
-        self.duck2 = pygame.image.load("resource/images/dino_ducking2.png")
-        self.duck1 = pygame.transform.scale(self.duck1, (self.WIDTH+15, self.HEIGHT))
-        self.duck2 = pygame.transform.scale(self.duck2, (self.WIDTH+15, self.HEIGHT))
+        # Images of the dino when user press key down
+        self.duck1 = pygame.image.load("resource/images/dino_ducking1.png") # Set the image of the dino when dino crouch
+        self.duck2 = pygame.image.load("resource/images/dino_ducking2.png") # Set the image of the dino when dino crouch
+
+        self.duck1 = pygame.transform.scale(self.duck1, (self.WIDTH+15, self.HEIGHT)) # Resize to new resolution of duck1 follow WIDTH and HEIGHT
+        self.duck2 = pygame.transform.scale(self.duck2, (self.WIDTH+15, self.HEIGHT)) # Resize to new resolution of duck2 follow WIDTH and HEIGHT
 
         self.is_ducking = False
 

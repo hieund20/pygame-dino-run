@@ -148,7 +148,7 @@ class Dino():
     def jump(self):
         self.y-=self.up # Start jumping
         self.jumping=True
-        self.jump_sound.play()
+        self.jump_sound.play() # Play the sound when dino jump
 
     def update(self):
         if self.y < 170: # check if jumping

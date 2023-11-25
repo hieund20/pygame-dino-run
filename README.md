@@ -187,7 +187,7 @@ Newton’s first law of motion states that:
 > A body remains in the state of rest or uniform motion in a straight line unless and until an external force acts on it.
 
 <br/>
-If I don't add the Newton's First Law of Motion to the dino, It will become:
+If I don't add the Newton's First Law of Motion to the dino class, It will become:
 
 https://github.com/hieund20/pygame-dino-run/assets/71435458/9ce5cde1-49d5-41ef-aab9-6e779a70e9c6
 

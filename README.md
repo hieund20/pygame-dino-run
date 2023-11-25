@@ -486,7 +486,7 @@ Now, the game is complete. I can run the game ny click on this button of Visual 
 
 Play the game:
 
-https://github.com/hieund20/pygame-dino-run/assets/71435458/9d693f64-f70c-4ef7-92bf-c9c5c05adf8b
+https://github.com/hieund20/pygame-dino-run/assets/71435458/bc31dcfc-2062-46c6-b6ce-b40cb41d1371
 
 Enjoy the coding !!
 

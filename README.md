@@ -106,7 +106,7 @@ def game():
     # To be continued
 ```
 
-Define the dino object
+Define the dino class
 ```
 class Dino():
     def __init__(self):

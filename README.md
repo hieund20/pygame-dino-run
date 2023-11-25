@@ -181,6 +181,8 @@ class Dino():
 
 [1] Newton's First Law of Motion
 
+Newton’s first law of motion states that:
+
 > A body remains in the state of rest or uniform motion in a straight line unless and until an external force acts on it.
 
 

@@ -106,6 +106,60 @@ def game():
     # To be continued
 ```
 
+Define the ground class:
+
+```
+class Ground():
+    def __init__(self):
+        self.ground_length = 1202
+        self.image1 = pygame.image.load("resource/images/ground.png")
+        self.image1_x = 0
+        self.image1_y = 200
+
+        self.image2 = pygame.image.load("resource/images/ground.png")
+        self.image2_x = self.image1_x + self.ground_length
+        self.image2_y = self.image1_y
+
+        self.speed = 4
+
+    def draw(self, screen):
+        screen.blit(self.image1, (self.image1_x, self.image1_y))
+        screen.blit(self.image2, (self.image2_x, self.image2_y))
+
+    def update(self):
+        self.image1_x-=self.speed
+        self.image2_x-=self.speed
+
+        if self.image1_x + self.ground_length < 0:
+            self.image1_x = self.image2_x + self.ground_length
+        elif self.image2_x + self.ground_length < 0:
+            self.image2_x = self.image1_x + self.ground_length
+```
+
+Define the clound class
+
+```
+class Cloud():
+    def __init__(self):
+        self.image = pygame.image.load("resource/images/cloud.png")
+        self.WIDTH, self.HEIGHT = 70, 40
+        self.image = pygame.transform.scale(self.image, (self.WIDTH, self.HEIGHT))
+        self.speed = 1
+        self.x = 600
+        self.y = 50
+
+    def update(self):
+        self.x-=self.speed
+
+        if self.x < -self.WIDTH:
+            self.x = 600 # render again
+            self.y = random.randint(10, 100)
+    
+    def draw(self, screen):
+        screen.blit(self.image, (self.x, self.y))
+```
+
+
 Define the dino class
 ```
 class Dino():
@@ -193,9 +247,10 @@ https://github.com/hieund20/pygame-dino-run/assets/71435458/9ce5cde1-49d5-41ef-a
 
 The reason is I had commentted this code line: <code>self.up = self.up + self.g * self.t # [1] Newton's First Law of Motion: v = u + at</code>
 
-Next, I will define obstacles. In this game, I have two obstacles, there are: cactus and ptera (Pteranodon)
-
 <br/>
+
+In this game, I have two obstacles, there are: cactus and ptera (Pteranodon)
+
 Define the Cactus class:
 
 ```

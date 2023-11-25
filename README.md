@@ -324,6 +324,176 @@ class Ptera():
         pygame.draw.rect(screen, (250, 0, 0), self.hitbox, 2)
 ```
 
+Update the game fucntion:
+
+```
+def game():
+    screen = pygame.display.set_mode((700, 250))
+    clock = pygame.time.Clock()
+
+    font = pygame.font.Font("freesansbold.ttf", 20)
+
+    check_point = pygame.mixer.Sound("resource/sounds/checkpoint.wav")
+    death_sound = pygame.mixer.Sound("resource/sounds/die.wav")
+
+    dino_icon = pygame.image.load("resource/images/dino_.png")
+    pygame.display.set_icon(dino_icon)
+
+    pygame.display.set_caption("Dino run")
+
+    game_over = pygame.image.load("resource/images/game_over.png")
+    replay_button = pygame.image.load("resource/images/replay_button.png")
+    logo = pygame.image.load("resource/images/logo.png")
+
+    GREY = (240, 240, 240)
+
+    ground = Ground()
+    dino = Dino()
+    cloud = Cloud()
+
+    obstacles = [Cactus()]
+    obstacles_start = time.time()
+    minimum_time = 1.5
+
+    running = False
+    play_game = True
+    dead = False
+    high_score_value = 0
+    FPS = 85
+
+    while play_game:
+        if not dead:
+            screen.fill(GREY)
+            ground.draw(screen)
+            screen.blit(dino.image, (dino.x, dino.y))
+            screen.blit(logo, (200, 70))
+        
+        pygame.display.update()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                play_game = False
+
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    running = True
+                    ground = Ground()
+                    dino = Dino()
+                    obstacles = [Cactus()]
+                    obstacles_start = time.time()
+                    dead = False
+                    score_value = 0
+
+        while running:
+            clock.tick(FPS)
+            score = font.render("Score: " + str(int(score_value)), True, (200, 200, 200))
+            score_value+=0.25
+            high_score_value=max(high_score_value, score_value)
+            high_score = font.render("High Score: "+ str(int(high_score_value)), True, (200, 200, 200))
+            screen.fill(GREY)
+
+            # Event handling
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        dino.jump()
+                    elif event.key == pygame.K_DOWN:
+                        dino.is_ducking=True
+                elif event.type == pygame.KEYUP:
+                    if event.key == pygame.K_DOWN:
+                        dino.is_ducking=False
+
+            ground.update()
+            ground.draw(screen)
+
+            cloud.update()
+            cloud.draw(screen)       
+
+            dino.update()
+            dino.draw(screen) 
+
+            for obstacle in obstacles:
+                if obstacle.is_cactus:
+                    obstacle.speed = ground.speed
+                elif obstacle.is_ptera:
+                    obstacle.speed = ground.speed+1  
+                obstacle.update()
+                obstacle.draw(screen)
+
+            screen.blit(score, (550, 30))
+            screen.blit(high_score, (350, 30))
+
+            # Add new obstacle
+            if time.time() - obstacles_start > minimum_time + random.randrange(0, 30)/10:
+                obstacles_start = time.time()
+                
+                if score_value > 500.0:
+                    ptera_probability = random.random() # Generate a random float from 0 to 1.0
+                    if ptera_probability > 0.5: # 20% probability that ptera is spawned
+                        obstacles.append(Ptera())
+                        obstacles[-1].speed = ground.speed+1
+                    else:
+                        obstacles.append(Cactus()) # 80% probability of a cactus (duh)
+                        obstacles[-1].speed = ground.speed # Synchronise the speed
+                else:
+                    obstacles.append(Cactus())
+                    obstacles[-1].speed=ground.speed
+                
+            if int(score_value) > 0 and int(score_value)%100==0 and int(score_value)%3==0: #increase speed after crosses is multiple of 300
+                ground.speed+=0.25
+                    
+                for obstacle in obstacles:
+                    if obstacle.is_cactus:
+                        obstacle.speed = ground.speed
+                    elif obstacle.is_ptera:
+                        obstacle.speed = ground.speed + 1
+                
+            if score_value>1 and score_value%100==0: # Checkpoint sound after score crosses a multiple of 100
+                check_point.play()
+
+            if dino.hitbox.colliderect(obstacles[0].hitbox): # Collision detection with closest cactus
+                death_sound.play()
+                dead = True
+                screen.blit(game_over, (170, 70))
+                screen.blit(replay_button, (340, 100))
+
+            if obstacles[0].x < -30:
+                obstacles.pop(0)
+                if obstacles==[]:
+                    obstacles.append(Cactus())
+                    obstacles_start=time.time()
+            pygame.display.update()
+
+            if dead:
+                del dino
+                del ground 
+                del obstacles
+                running = False
+```
+
+Finally, I call the game function at the bottom of the file:
+
+```
+game()
+```
+
+Now, the game is complete. I can run the game ny click on this button of Visual Studio Code:
+
+![Untitled](https://github.com/hieund20/pygame-dino-run/assets/71435458/23b2c666-3742-44b8-8ed0-b7288ebc75fe)
+
+PLay game:
+
+
+
+
+Enjoy the coding !!
+
+
+
+
 
 
 

@@ -179,6 +179,7 @@ class Dino():
         pygame.draw.rect(screen, (0, 0, 0), self.hitbox, 2)
 ```
 
+<br/>
 [1] Newton's First Law of Motion
 
 Newton’s first law of motion states that:

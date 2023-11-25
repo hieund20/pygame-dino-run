@@ -193,7 +193,81 @@ https://github.com/hieund20/pygame-dino-run/assets/71435458/9ce5cde1-49d5-41ef-a
 
 The reason is I had commentted this code line: <code>self.up = self.up + self.g * self.t # [1] Newton's First Law of Motion: v = u + at</code>
 
+Next, I will define obstacles. In this game, I have two obstacles, there are: cactus and ptera (Pteranodon)
 
+<br/>
+Define the Cactus class:
+
+```
+class Cactus():
+    def __init__(self):
+        self.image0 = pygame.image.load("resource/images/cacti-small.png")
+        self.image1 = pygame.image.load("resource/images/cacti-big.png")
+        self.width0 = 45
+        self.height = 45
+        self.width1 = 65
+
+        self.image0 = pygame.transform.scale(self.image0, (self.width0, self.height))
+        self.image1 = pygame.transform.scale(self.image1, (self.width1, self.height))
+
+        self.is_cactus = True
+        self.is_ptera = False
+
+        self.image, self.width = random.choice([[self.image0, self.width0], [self.image1, self.width1]])
+        
+        self.x = random.randint(720, 1000)
+        self.y = 175
+        self.speed = 4
+
+        self.hitbox = pygame.Rect(self.x, self.y, self.width, self.height)
+
+    def update(self):
+        self.x -= self.speed
+        self.hitbox = pygame.Rect(self.x, self.y, self.width, self.height)
+        
+    def draw(self, screen):
+        screen.blit(self.image, (self.x, self.y))
+```
+<br/>
+Define the Ptera class:
+
+```
+class Ptera():
+    def __init__(self):
+        self.width, self.height = 50, 40
+        self.im1 = pygame.image.load("resource/images/ptera1.png")
+        self.im2 = pygame.image.load("resource/images/ptera2.png")
+
+        self.im1 = pygame.transform.scale(self.im1, (self.width, self.height))
+        self.im2 = pygame.transform.scale(self.im2, (self.width, self.height))
+
+        self.flaps = [self.im1, self.im2]
+
+        self.altitudes = [175, 150, 110]
+        self.x = random.randint(750, 1000)
+        self.y = random.choice(self.altitudes)
+
+        self.speed = 5
+        self.count = 0
+        self.is_ptera = True
+        self.is_cactus = False
+
+        self.hitbox = (self.x, self.y+10, self.width, self.height-12)
+
+    def update(self):
+        self.image = self.flaps[int(self.count)%2] #make animation
+        self.count+=0.1
+
+        self.x -= self.speed
+        if self.x < 50:
+            self.allowed = True
+
+        self.hitbox = pygame.Rect(self.x, self.y + 10, self.width, self.height)
+
+    def draw(self, screen):
+        screen.blit(self.image, (self.x, self.y))
+        pygame.draw.rect(screen, (250, 0, 0), self.hitbox, 2)
+```
 
 
 

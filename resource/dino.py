@@ -175,9 +175,11 @@ class Dino():
             self.hitbox = pygame.Rect(self.x + 5, self.y + 20, self.WIDTH +12, self.HEIGHT -20)
             self.image = self.duckImgs[int(self.count)%2]
             self.count+=0.2
+            
         elif self.jumping:
             self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH - 15, self.HEIGHT-5)
             self.image=self.Img
+            
         else:
             self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-17, self.HEIGHT-5)
             self.image = self.runImgs[int(self.count)%2]

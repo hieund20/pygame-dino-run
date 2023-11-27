@@ -232,7 +232,7 @@ class Dino():
 
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
-        pygame.draw.rect(screen, (0, 0, 0), self.hitbox, 2)
+        pygame.draw.rect(screen, (0, 0, 0), self.hitbox, 2) # Draw a rectangle. It will contain the dino image
 ```
 
 <br/>

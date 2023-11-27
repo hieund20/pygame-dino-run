@@ -174,7 +174,7 @@ class Dino():
         self.up = 7 # Initial upward velocity of the dino
         self.t = 0 # time
 
-        self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-15, self.HEIGHT-5)
+        self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-15, self.HEIGHT-5) # pygame.Rect(left, top, width, height): pygame object for storing rectangular coordinates
 
         self.runImg1 = pygame.image.load("resource/images/dino_1.png") # Set the image of the dino when dino run
         self.runImg2 = pygame.image.load("resource/images/dino_2.png") # Set the image of the dino when dino run
@@ -205,27 +205,29 @@ class Dino():
         self.jump_sound.play() # Play the sound when dino jump
 
     def update(self):
-        if self.y < 170: # check if jumping
+        if self.y < 170: # Check if jumping
             self.up = self.up + self.g * self.t # [1] Newton's First Law of Motion: v = u + at
             self.y -= self.up
             self.t += 0.12 # incrementing time
 
-        if self.y > 170:  # check if jumping is complete and resetting all
+        if self.y > 170:  # Check if jumping is complete and resetting all
             self.y = 170
             self.t = 0
             self.up = 7
             self.jumping = False
 
-        if self.is_ducking:
+        if self.is_ducking: # Check if the dino is crouch
             self.hitbox = pygame.Rect(self.x + 5, self.y + 20, self.WIDTH +12, self.HEIGHT -20)
-            self.image = self.duckImgs[int(self.count)%2]
+            self.image = self.duckImgs[int(self.count)%2] # Set the current image of the dukcing dino. It is the result of the randomness of the count variable.
             self.count+=0.2
-        elif self.jumping:
-            self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH - 15, self.HEIGHT-5)
-            self.image=self.Img
-        else:
+
+        elif self.jumping: # Check if the player press space after the dino crouch, I will change the dino image to the default image
+            self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH - 15, self.HEIGHT-5) 
+            self.image=self.Img # Modify the image of the dino. Set the default image
+
+        else: # Check if the player don't press space, the dino will run normally
             self.hitbox = pygame.Rect(self.x + 5, self.y, self.WIDTH-17, self.HEIGHT-5)
-            self.image = self.runImgs[int(self.count)%2]
+            self.image = self.runImgs[int(self.count)%2] # Set the current image ofthe  running dino. It is the result of the randomness of the count variable.
             self.count += 0.15
 
     def draw(self, screen):

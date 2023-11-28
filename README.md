@@ -136,7 +136,7 @@ class Ground():
             self.image2_x = self.image1_x + self.ground_length
 ```
 
-Define the clound class
+Define the cloud class
 
 ```
 class Cloud():

@@ -117,10 +117,10 @@ class Ground():
         self.image1_y = 200 # Initial the ground y's position
 
         self.image2 = pygame.image.load("resource/images/ground.png") # Initial the ground image 2, it will be merged with the ground image 1
-        self.image2_x = self.image1_x + self.ground_length # Initial the ground x's position
+        self.image2_x = self.image1_x + self.ground_length # Initial the ground x's position, it will appear after 1202px on X coordinate axis
         self.image2_y = self.image1_y  # Initial the ground y's position
 
-        self.speed = 4
+        self.speed = 4 # Initial the speed of ground motion
 
     def draw(self, screen):
         screen.blit(self.image1, (self.image1_x, self.image1_y))

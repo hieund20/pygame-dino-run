@@ -111,10 +111,10 @@ Define the ground class:
 ```
 class Ground():
     def __init__(self):
-        self.ground_length = 1202
-        self.image1 = pygame.image.load("resource/images/ground.png")
-        self.image1_x = 0
-        self.image1_y = 200
+        self.ground_length = 1202 # Initial the ground length
+        self.image1 = pygame.image.load("resource/images/ground.png") # Initial the ground image
+        self.image1_x = 0 # Initial the ground x axis
+        self.image1_y = 200 # Initial the ground y axis
 
         self.image2 = pygame.image.load("resource/images/ground.png")
         self.image2_x = self.image1_x + self.ground_length

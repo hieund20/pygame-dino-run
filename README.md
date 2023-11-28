@@ -113,12 +113,12 @@ class Ground():
     def __init__(self):
         self.ground_length = 1202 # Initial the ground length
         self.image1 = pygame.image.load("resource/images/ground.png") # Initial the ground image
-        self.image1_x = 0 # Initial the ground x axis
-        self.image1_y = 200 # Initial the ground y axis
+        self.image1_x = 0 # Initial the ground x's position
+        self.image1_y = 200 # Initial the ground y's position
 
-        self.image2 = pygame.image.load("resource/images/ground.png")
-        self.image2_x = self.image1_x + self.ground_length
-        self.image2_y = self.image1_y
+        self.image2 = pygame.image.load("resource/images/ground.png") # Initial the ground image 2, it will be merged with the ground image 1
+        self.image2_x = self.image1_x + self.ground_length # Initial the ground x's position
+        self.image2_y = self.image1_y  # Initial the ground y's position
 
         self.speed = 4
 

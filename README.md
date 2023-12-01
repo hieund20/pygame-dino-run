@@ -127,10 +127,10 @@ class Ground():
         screen.blit(self.image2, (self.image2_x, self.image2_y)) # Draw image2 onto another
 
     def update(self):
-        self.image1_x-=self.speed # Draw image1 onto another
-        self.image2_x-=self.speed # Draw image1 onto another
+        self.image1_x-=self.speed # Make ground move 
+        self.image2_x-=self.speed # Make ground move
 
-        if self.image1_x + self.ground_length < 0:
+        if self.image1_x + self.ground_length < 0: 
             self.image1_x = self.image2_x + self.ground_length
         elif self.image2_x + self.ground_length < 0:
             self.image2_x = self.image1_x + self.ground_length

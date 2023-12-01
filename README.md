@@ -123,8 +123,8 @@ class Ground():
         self.speed = 4 # Initial the speed of ground motion
 
     def draw(self, screen):
-        screen.blit(self.image1, (self.image1_x, self.image1_y))
-        screen.blit(self.image2, (self.image2_x, self.image2_y))
+        screen.blit(self.image1, (self.image1_x, self.image1_y)) # Draw image1 onto another
+        screen.blit(self.image2, (self.image2_x, self.image2_y)) # Draw image2 onto another
 
     def update(self):
         self.image1_x-=self.speed
